@@ -27,7 +27,7 @@ try:
     shutil.copy(preamblepath, os.path.join(projname, preambleName))
     with open(bodypath) as fid:
         strrep = fid.read()
-        strrep.replace('bigProjectPreamble', preambleName)
+        strrep = strrep.replace('bigProjectPreamble', preambleName.replace('.tex', ''))
     with open(os.path.join(projname, bodyName), 'w') as fid:
         fid.write(strrep)
 except Exception as e:
